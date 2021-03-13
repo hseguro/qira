@@ -3,8 +3,8 @@
 # install system deps
 if [ $(which apt-get) ]; then
   echo "installing deps for ubuntu"
-  sudo apt-get -y install git curl python python-dev python3-pip build-essential pkg-config zlib1g-dev libglib2.0-dev libpixman-1-dev
-  sudo pip3 install virtualenv 
+  apt-get -y install git curl python python-dev python3-pip build-essential pkg-config zlib1g-dev libglib2.0-dev libpixman-1-dev
+  pip3 install virtualenv 
  
 else
   echo "*** You'll need to install Ubuntu or get a working build env for qemu and python yourself ***"
@@ -37,7 +37,7 @@ echo "running tests"
 ./run_tests.sh
 
 echo "making systemwide symlink"
-sudo ln -sf $(pwd)/qira /usr/local/bin/qira
+ln -sf $(pwd)/qira /usr/local/bin/qira
 
 echo "***************************************"
 echo "  Thanks for installing QIRA"
